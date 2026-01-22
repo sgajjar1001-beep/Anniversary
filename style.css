@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+  text-align: center;
+}
+
+.container { padding: 30px; }
+
+.intro { font-size: 18px; margin-bottom: 30px; }
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.15);
+  padding: 15px;
+  border-radius: 15px;
+  width: 260px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.countdown-box {
+  margin-top: 40px;
+  padding: 20px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 20px;
+}
+
+#countdown {
+  font-size: 20px;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+.calendar-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: white;
+  color: #ff4b6e;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+button {
+  margin-top: 30px;
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  background: white;
+  color: #ff4b6e;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+  margin-top: 25px;
+  font-size: 18px;
+}
