@@ -20,7 +20,7 @@ function updateCountdown() {
   const diff = anniversaryDate - now;
   if (diff <= 0) {
     document.getElementById("countdown").innerHTML =
-      "💖 आज ही हमारी Anniversary है 💖";
+    
     return;
   }
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
