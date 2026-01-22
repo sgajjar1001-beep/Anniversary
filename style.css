@@ -1,9 +1,9 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+  background: linear-gradient(135deg, #fff1cc, #ffe4c4);
   font-family: 'Segoe UI', sans-serif;
-  color: white;
+  color: #444;
   text-align: center;
 }
 
@@ -68,4 +68,20 @@ button {
   display: none;
   margin-top: 25px;
   font-size: 18px;
+}
+/* 🌸 EXTRA POLISH – Cream Peach Theme */
+
+.card {
+  background: rgba(255,255,255,0.9);
+  color: #333;
+}
+
+.countdown-box {
+  background: rgba(255,255,255,0.85);
+  color: #333;
+}
+
+.calendar-btn {
+  background: #ffb085;
+  color: white;
 }
