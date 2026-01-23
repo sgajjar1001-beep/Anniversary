@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   // 💍 Engagement Date (LOCAL TIME)
-  const engagementDate = new Date(2025, 6, 22, 0, 0, 0);
+  const engagementDate = new Date(2025, 6, 22, 0, 0, 0); // 22 July 2025
 
   function updateCounter() {
     const el = document.getElementById("countdown");
