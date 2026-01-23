@@ -45,15 +45,6 @@ body {
   font-weight: bold;
 }
 
-.calendar-btn {
-  display: inline-block;
-  padding: 12px 25px;
-  background: #ffb085;
-  color: white;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-}
 
 button {
   margin-top: 30px;
