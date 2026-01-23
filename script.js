@@ -1,75 +1,76 @@
-// 💝 SURPRISE FUNCTION (GLOBAL)
-window.showLove = function () {
-  const msg = document.getElementById("loveMsg");
-  if (msg) msg.style.display = "block";
+document.addEventListener("DOMContentLoaded", function () {
 
-  for (let i = 0; i < 20; i++) {
-    const heart = document.createElement("div");
-    heart.innerHTML = "❤️";
-    heart.style.position = "fixed";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.bottom = "0";
-    heart.style.fontSize = "22px";
-    heart.style.animation = "floatUp 4s linear";
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 4000);
+  // 💝 SURPRISE FUNCTION (GLOBAL)
+  window.showLove = function () {
+    const msg = document.getElementById("loveMsg");
+    if (msg) msg.style.display = "block";
+
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement("div");
+      heart.innerHTML = "❤️";
+      heart.style.position = "fixed";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.bottom = "0";
+      heart.style.fontSize = "22px";
+      heart.style.animation = "floatUp 4s linear";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }
+  };
+
+  // 💍 Engagement Date (LOCAL TIME)
+  const engagementDate = new Date(2025, 6, 22, 0, 0, 0);
+
+  function updateCounter() {
+    const el = document.getElementById("countdown");
+    if (!el) return;
+
+    const now = new Date();
+
+    let years = now.getFullYear() - engagementDate.getFullYear();
+    let months = now.getMonth() - engagementDate.getMonth();
+    let days = now.getDate() - engagementDate.getDate();
+
+    if (days < 0) {
+      months--;
+      const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+      days += prevMonth.getDate();
+    }
+
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+
+    const totalMonths = years * 12 + months;
+
+    const lastAnniv = new Date(
+      engagementDate.getFullYear(),
+      engagementDate.getMonth() + totalMonths,
+      engagementDate.getDate()
+    );
+
+    let diffMs = now - lastAnniv;
+
+    const hours = Math.floor(diffMs / (1000 * 60 * 60));
+    diffMs %= (1000 * 60 * 60);
+
+    const minutes = Math.floor(diffMs / (1000 * 60));
+    diffMs %= (1000 * 60);
+
+    const seconds = Math.floor(diffMs / 1000);
+
+    el.innerHTML = `
+      💖 Engagement से <br>
+      <b>${totalMonths}</b> महीने 
+      <b>${days}</b> दिन <br>
+      <b>${hours}</b> घंटे 
+      <b>${minutes}</b> मिनट 
+      <b>${seconds}</b> सेकंड हो चुके हैं 💍✨
+    `;
   }
-};
 
-// 💍 Engagement Date (LOCAL TIME)
-const engagementDate = new Date(2025, 6, 22, 0, 0, 0); // 22 July 2025
+  updateCounter();
+  setInterval(updateCounter, 1000);
 
-function updateCounter() {
-  const el = document.getElementById("countdown");
-  if (!el) return;
-
-  const now = new Date();
-
-  // Step 1: Months calculation (calendar based)
-  let years = now.getFullYear() - engagementDate.getFullYear();
-  let months = now.getMonth() - engagementDate.getMonth();
-  let days = now.getDate() - engagementDate.getDate();
-
-  if (days < 0) {
-    months--;
-    const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
-    days += prevMonth.getDate();
-  }
-
-  if (months < 0) {
-    years--;
-    months += 12;
-  }
-
-  const totalMonths = years * 12 + months;
-
-  // Step 2: Time difference for hours/min/sec
-  const lastAnniv = new Date(
-    engagementDate.getFullYear(),
-    engagementDate.getMonth() + totalMonths,
-    engagementDate.getDate()
-  );
-
-  let diffMs = now - lastAnniv;
-
-  const hours = Math.floor(diffMs / (1000 * 60 * 60));
-  diffMs %= (1000 * 60 * 60);
-
-  const minutes = Math.floor(diffMs / (1000 * 60));
-  diffMs %= (1000 * 60);
-
-  const seconds = Math.floor(diffMs / 1000);
-
-  // ✅ Final output
-  el.innerHTML = `
-    💖 Engagement से <br>
-    <b>${totalMonths}</b> महीने 
-    <b>${days}</b> दिन <br>
-    <b>${hours}</b> घंटे 
-    <b>${minutes}</b> मिनट 
-    <b>${seconds}</b> सेकंड हो चुके हैं 💍✨
-  `;
-}
-
-updateCounter();
-setInterval(updateCounter, 1000);
+});
