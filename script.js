@@ -1,3 +1,21 @@
+// 💝 SURPRISE FUNCTION (GLOBAL)
+window.showLove = function () {
+  const msg = document.getElementById("loveMsg");
+  if (msg) msg.style.display = "block";
+
+  for (let i = 0; i < 20; i++) {
+    const heart = document.createElement("div");
+    heart.innerHTML = "❤️";
+    heart.style.position = "fixed";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.bottom = "0";
+    heart.style.fontSize = "22px";
+    heart.style.animation = "floatUp 4s linear";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 4000);
+  }
+};
+
 // 💍 Engagement Date (LOCAL TIME)
 const engagementDate = new Date(2025, 6, 22, 0, 0, 0); // 22 July 2025
 
