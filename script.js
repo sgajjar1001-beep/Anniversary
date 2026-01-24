@@ -75,7 +75,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 // 💖 PHOTO POPUP FUNCTIONS
-function openPopup(imgSrc, text) {
+function openPopup(imgSrc, text) {for (let i = 0; i < 12; i++) {
+  const h = document.createElement("div");
+  h.innerHTML = "❤️";
+  h.style.position = "fixed";
+  h.style.left = Math.random() * 100 + "vw";
+  h.style.top = Math.random() * 100 + "vh";
+  h.style.fontSize = "18px";
+  h.style.opacity = "0.8";
+  h.style.zIndex = "10000";
+  h.style.animation = "floatUp 3s linear";
+  document.body.appendChild(h);
+  setTimeout(() => h.remove(), 3000);
+}
   document.getElementById("popupImg").src = imgSrc;
   document.getElementById("popupText").innerText = text;
   document.getElementById("photoPopup").style.display = "flex";
