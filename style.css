@@ -93,7 +93,26 @@ button {
   z-index: 9999;
   animation: fadeIn 0.4s ease;
 }
-
+/* 💖 HEART FRAME AROUND POPUP IMAGE */
+.popup img {
+  max-width: 85%;
+  max-height: 60%;
+  border-radius: 20px;
+  padding: 18px;
+  background:
+    radial-gradient(circle at 10px 10px, #ff6b81 6px, transparent 7px),
+    radial-gradient(circle at 40px 10px, #ff6b81 6px, transparent 7px),
+    radial-gradient(circle at 70px 10px, #ff6b81 6px, transparent 7px),
+    radial-gradient(circle at 10px 40px, #ff6b81 6px, transparent 7px),
+    radial-gradient(circle at 10px 70px, #ff6b81 6px, transparent 7px),
+    radial-gradient(circle at 40px 70px, #ff6b81 6px, transparent 7px),
+    radial-gradient(circle at 70px 70px, #ff6b81 6px, transparent 7px),
+    radial-gradient(circle at 70px 40px, #ff6b81 6px, transparent 7px);
+  background-color: white;
+  background-repeat: repeat;
+  background-size: 80px 80px;
+  box-shadow: 0 0 25px rgba(255,105,135,0.6);
+}
 .popup img {
   max-width: 85%;
   max-height: 60%;
