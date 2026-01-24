@@ -74,55 +74,15 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(updateCounter, 1000);
 
 });
-/* 💖 PHOTO POPUP MODAL */
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 9999;
-  animation: fadeIn 0.4s ease;
+// 💖 PHOTO POPUP FUNCTIONS
+function openPopup(imgSrc, text) {
+  document.getElementById("popupImg").src = imgSrc;
+  document.getElementById("popupText").innerText = text;
+  document.getElementById("photoPopup").style.display = "flex";
+  document.body.style.overflow = "hidden";
 }
 
-.popup img {
-  max-width: 85%;
-  max-height: 60%;
-  border-radius: 20px;
-  animation: zoomIn 0.4s ease;
-}
-
-.popup p {
-  margin-top: 20px;
-  color: white;
-  font-size: 18px;
-  text-align: center;
-  padding: 0 20px;
-  line-height: 1.6;
-  white-space: pre-line;
-}
-
-.popup .close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 35px;
-  color: white;
-  cursor: pointer;
-}
-
-/* ✨ Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes zoomIn {
-  from { transform: scale(0.7); }
-  to { transform: scale(1); }
+function closePopup() {
+  document.getElementById("photoPopup").style.display = "none";
+  document.body.style.overflow = "auto";
 }
