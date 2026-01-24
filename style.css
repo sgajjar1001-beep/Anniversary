@@ -7,18 +7,21 @@ body {
   text-align: center;
 }
 
-.container { padding: 30px; 
-            max-width: 900px;
-            margin: 40px auto;
-            border: 08px solid #e8c7a1;
-            outline: 3px solid #f3dcc1;
-            outline-offset: -12px;
-            border-radius: 30px;
-            background: rgba(255,255,255,0.6);
-           }
+.container {
+  padding: 30px;
+  max-width: 900px;
+  margin: 40px auto;
+  border: 8px solid #e8c7a1;
+  outline: 3px solid #f3dcc1;
+  outline-offset: -12px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.6);
+}
 
-
-.intro { font-size: 18px; margin-bottom: 30px; }
+.intro {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
 
 .gallery {
   display: flex;
@@ -32,7 +35,7 @@ body {
   padding: 15px;
   border-radius: 15px;
   width: 260px;
-  color: #333;
+  cursor: pointer;
 }
 
 .card img {
@@ -45,15 +48,9 @@ body {
   padding: 20px;
   background: rgba(255,255,255,0.85);
   border-radius: 20px;
-  color: #333;
-}
-
-#countdown {
   font-size: 20px;
-  margin: 15px 0;
   font-weight: bold;
 }
-
 
 button {
   margin-top: 30px;
@@ -61,8 +58,8 @@ button {
   border-radius: 30px;
   border: none;
   font-size: 16px;
-  background: white;
-  color: #ff4b6e;
+  background: #ffb085;
+  color: white;
   cursor: pointer;
 }
 
@@ -72,28 +69,25 @@ button {
   font-size: 18px;
 }
 
-/* ❤️ HEART ANIMATION */
+/* ❤️ HEART FLOAT */
 @keyframes floatUp {
   from { transform: translateY(0); opacity: 1; }
   to { transform: translateY(-100vh); opacity: 0; }
 }
 
-/* 💖 PHOTO POPUP MODAL */
+/* 💖 POPUP */
 .popup {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0,0,0,0.6);
   display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   z-index: 9999;
-  animation: fadeIn 0.4s ease;
 }
-/* 💖 HEART FRAME AROUND POPUP IMAGE */
+
+/* 💖 HEART FRAME */
 .popup img {
   max-width: 85%;
   max-height: 60%;
@@ -101,51 +95,24 @@ button {
   padding: 18px;
   background:
     radial-gradient(circle at 10px 10px, #ff6b81 6px, transparent 7px),
-    radial-gradient(circle at 40px 10px, #ff6b81 6px, transparent 7px),
-    radial-gradient(circle at 70px 10px, #ff6b81 6px, transparent 7px),
-    radial-gradient(circle at 10px 40px, #ff6b81 6px, transparent 7px),
-    radial-gradient(circle at 10px 70px, #ff6b81 6px, transparent 7px),
-    radial-gradient(circle at 40px 70px, #ff6b81 6px, transparent 7px),
-    radial-gradient(circle at 70px 70px, #ff6b81 6px, transparent 7px),
-    radial-gradient(circle at 70px 40px, #ff6b81 6px, transparent 7px);
+    radial-gradient(circle at 40px 40px, #ff6b81 6px, transparent 7px);
+  background-size: 60px 60px;
   background-color: white;
-  background-repeat: repeat;
-  background-size: 80px 80px;
   box-shadow: 0 0 25px rgba(255,105,135,0.6);
-}
-.popup img {
-  max-width: 85%;
-  max-height: 60%;
-  border-radius: 20px;
-  animation: zoomIn 0.4s ease;
 }
 
 .popup p {
   margin-top: 20px;
   color: white;
   font-size: 18px;
-  text-align: center;
-  padding: 0 20px;
-  line-height: 1.6;
   white-space: pre-line;
 }
 
-.popup .close {
+.close {
   position: absolute;
   top: 20px;
   right: 30px;
   font-size: 35px;
   color: white;
   cursor: pointer;
-}
-
-/* ✨ Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes zoomIn {
-  from { transform: scale(0.7); }
-  to { transform: scale(1); }
 }
