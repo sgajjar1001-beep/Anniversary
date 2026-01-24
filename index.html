@@ -1,61 +1,50 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-  <meta charset="UTF-8">
-  <title>Chirag ❤️ Shruti</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!DOCTYPE html>  <html lang="hi">  
+<head>  
+  <meta charset="UTF-8">  
+  <title>Chirag ❤️ Shruti</title>  
+  <link rel="stylesheet" href="style.css">  
+</head>  
+<body>  <audio autoplay loop>  
+  <source src="music/romantic.mp3" type="audio/mpeg">  
+</audio>  <div class="container">  
+  <h1>Chirag ❤️ Shruti</h1>  
+  <h2>Happy 6-Month Anniversary 💖</h2>    <p class="intro">  
+    आज ही के दिन हम पहली बार मिले थे,<br>  
+    उस पल को शब्दों में बयां करना मुश्किल है ✨<br>  
+    लेकिन उसी दिन दिल ने तुम्हें अपना मान लिया था ❤️  
+  </p>    <div class="gallery">  
+    <div class="gallery">    <div class="card" onclick="openPopup('images/photo1.jpg',   
+  'पहली नज़र में ही कुछ खास महसूस हुआ,\nजैसे दिल ने चुपचाप तुम्हें चुन लिया हो ❤️')">  
+    <img src="images/photo1.jpg">  
+    <p>पहली मुलाकात की एक खूबसूरत याद ✨</p>  
+  </div>    <div class="card" onclick="openPopup('images/photo2.jpg',   
+  'उस पहली मुलाकात के बाद,\nहर दिन तुम्हारी यादों से जुड़ता गया 💕')">  
+    <img src="images/photo2.jpg">  
+    <p>एक एहसास जो हर दिन गहरा हुआ 🌸</p>  
+  </div>  </div>  
+  </div>    <div class="countdown-box">  
+    <h2>  
+22 July 2025 💍<br>  
+जिस दिन हमारी Engagement हुई थी<br><br>  
+आज हमारे साथ के 6 खूबसूरत महीने पूरे हुए हैं ✨❤️  
+    </h2>  
+    <div id="countdown">Loading...</div>  
+    <p style="font-size:18px;">  
+हर दिन तुम्हारे साथ और भी खास बनता जा रहा है 💖  
+    </p>    </div>  <button onclick="showLove()">एक छोटा सा Surprise 💝</button>
 
-<div class="container">
-  <h1>Chirag ❤️ Shruti</h1>
-  <h2>Happy 6-Month Anniversary 💖</h2>
-
-  <p class="intro">
-    22 July 2025 💍<br>
-    जिस दिन हमारी Engagement हुई थी ✨
-  </p>
-
-  <!-- 📸 GALLERY -->
-  <div class="gallery">
-    <div class="card" data-img="images/photo1.jpg"
-         data-text="पहली नज़र में ही कुछ खास महसूस हुआ,
-जैसे दिल ने चुपचाप तुम्हें चुन लिया हो ❤️">
-      <img src="images/photo1.jpg">
-      <p>पहली मुलाकात ✨</p>
-    </div>
-
-    <div class="card" data-img="images/photo2.jpg"
-         data-text="उस पहली मुलाकात के बाद,
-हर दिन तुम्हारी यादों से जुड़ता गया 💕">
-      <img src="images/photo2.jpg">
-      <p>हर दिन और भी खास 🌸</p>
-    </div>
-  </div>
-
-  <!-- ⏳ COUNTDOWN -->
-  <div class="countdown-box">
-    <div id="countdown">Loading...</div>
-  </div>
-
-  <!-- 💝 SURPRISE -->
-  <button id="surpriseBtn">एक छोटा सा Surprise 💝</button>
-
-  <div id="loveMsg" class="hidden">
-    Shruti ❤️<br><br>
-    तेरे कपड़ों की महक मेरे सांसों में बस गई है,<br>
-    और तेरी मुस्कान मेरी सबसे बड़ी कमजोरी बन गई है 💖<br><br>
-    — Chirag 💞
-  </div>
-</div>
-
-<!-- 💖 POPUP -->
-<div id="photoPopup" class="popup">
-  <span class="close">×</span>
-  <img id="popupImg">
-  <p id="popupText"></p>
-</div>
-
-<script src="script.js"></script>
-</body>
+  <div id="loveMsg" class="hidden">  
+    Shruti ❤️<br><br>  
+    तेरे कपड़ो की महक मेरे स्वास में मिलती है,<br>  
+    तू पूछती है तुझमें क्या पसंद आया है। 😊<br><br>  
+    तारीफ के काबिल तो तेरी ये जुम्फे भी हैं,<br>  
+    लेकिन हमे तो पसंद तेरी ये काजल वाली आंखे आई हैं। 💖<br><br>  
+    — Chirag 💞  
+  </div>  
+</div>  <script src="script.js"></script>    <!-- 💖 PHOTO POPUP -->  <div id="photoPopup" class="popup">  
+  <span class="close" onclick="closePopup()">×</span>  
+  <img id="popupImg">  
+  <p id="popupText"></p>  
+</div>  
+</body>  
 </html>
