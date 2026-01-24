@@ -1,117 +1,121 @@
 body {
-margin: 0;
-min-height: 100vh;
-background: linear-gradient(135deg, #fff1cc, #ffe4c4);
-font-family: 'Segoe UI', sans-serif;
-color: #444;
-text-align: center;
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff1cc, #ffe4c4);
+  font-family: 'Segoe UI', sans-serif;
+  color: #444;
+  text-align: center;
 }
 
-.container { padding: 30px;
-max-width: 900px;
-margin: 40px auto;
-border: 08px solid #e8c7a1;
-outline: 3px solid #f3dcc1;
-outline-offset: -12px;
-border-radius: 30px;
-background: rgba(255,255,255,0.6);
+.container {
+  padding: 30px;
+  max-width: 900px;
+  margin: 30px auto;
+  border: 8px solid #e8c7a1;
+  outline: 3px solid #f3dcc1;
+  outline-offset: -12px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.6);
 }
 
-.intro { font-size: 18px; margin-bottom: 30px; }
+.intro {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
 
 .gallery {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 .card {
-background: rgba(255,255,255,0.9);
-padding: 15px;
-border-radius: 15px;
-width: 260px;
-color: #333;
+  background: rgba(255,255,255,0.9);
+  padding: 15px;
+  border-radius: 15px;
+  width: 260px;
+  cursor: pointer;
 }
 
 .card img {
-width: 100%;
-border-radius: 10px;
+  width: 100%;
+  border-radius: 10px;
 }
 
 .countdown-box {
-margin-top: 40px;
-padding: 20px;
-background: rgba(255,255,255,0.85);
-border-radius: 20px;
-color: #333;
-}
-
-#countdown {
-font-size: 20px;
-margin: 15px 0;
-font-weight: bold;
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 button {
-margin-top: 30px;
-padding: 12px 30px;
-border-radius: 30px;
-border: none;
-font-size: 16px;
-background: white;
-color: #ff4b6e;
-cursor: pointer;
+  margin-top: 30px;
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  background: #ffb085;
+  color: white;
+  cursor: pointer;
 }
 
 .hidden {
-display: none;
-margin-top: 25px;
-font-size: 18px;
+  display: none;
+  margin-top: 25px;
+  font-size: 18px;
 }
 
-/* ❤️ HEART ANIMATION */
+/* ❤️ HEART FLOAT */
 @keyframes floatUp {
-from { transform: translateY(0); opacity: 1; }
-to { transform: translateY(-100vh); opacity: 0; }
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-100vh); opacity: 0; }
 }
 
-/* 💖 PHOTO POPUP MODAL /
+/* 💖 POPUP */
 .popup {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0,0,0,0.6);
-display: none;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-z-index: 9999;
-animation: fadeIn 0.4s ease;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
 }
-/ 💖 HEART FRAME AROUND POPUP IMAGE */
+
+/* 💖 HEART FRAME */
 .popup img {
-max-width: 85%;
-max-height: 60%;
-border-radius: 20px;
-padding: 18px;
-background:
-radial-gradient(circle at 10px 10px, #ff6b81 6px, transparent 7px),
-radial-gradient(circle at 40px 10px, #ff6b81 6px, transparent 7px),
-radial-gradient(circle at 70px 10px, #ff6b81 6px, transparent 7px),
-radial-gradient(circle at 10px 40px, #ff6b81 6px, transparent 7px),
-radial-gradient(circle at 10px 70px, #ff6b81 6px, transparent 7px),
-radial-gradient(circle at 40px 70px, #ff6b81 6px, transparent 7px),
-radial-gradient(circle at 70px 70px, #ff6b81 6px, transparent 7px),
-radial-gradient(circle at 70px 40px, #ff6b81 6px, transparent 7px);
-background-color: white;
-background-repeat: repeat;
-background-size: 80px 80px;
-box-shadow: 0 0 25px rgba(255,105,135,0.6);
+  max-width: 85%;
+  max-height: 60%;
+  border-radius: 20px;
+  padding: 18px;
+  background:
+    radial-gradient(circle at 10px 10px, #ff6b81 6px, transparent 7px),
+    radial-gradient(circle at 40px 40px, #ff6b81 6px, transparent 7px);
+  background-size: 60px 60px;
+  background-color: white;
+  box-shadow: 0 0 25px rgba(255,105,135,0.6);
 }
-.popup img {
+
+.popup p {
+  margin-top: 20px;
+  color: white;
+  font-size: 18px;
+  white-space: pre-line;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+}.popup img {
 max-width: 85%;
 max-height: 60%;
 border-radius: 20px;
