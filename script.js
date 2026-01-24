@@ -1,102 +1,88 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-// 💝 SURPRISE FUNCTION (GLOBAL)
-window.showLove = function () {
-const msg = document.getElementById("loveMsg");
-if (msg) msg.style.display = "block";
+  /* 💝 SURPRISE */
+  const surpriseBtn = document.getElementById("surpriseBtn");
+  const loveMsg = document.getElementById("loveMsg");
 
-for (let i = 0; i < 20; i++) {  
-  const heart = document.createElement("div");  
-  heart.innerHTML = "❤️";  
-  heart.style.position = "fixed";  
-  heart.style.left = Math.random() * 100 + "vw";  
-  heart.style.bottom = "0";  
-  heart.style.fontSize = "22px";  
-  heart.style.animation = "floatUp 4s linear";  
-  document.body.appendChild(heart);  
-  setTimeout(() => heart.remove(), 4000);  
-}
+  surpriseBtn.addEventListener("click", function () {
+    loveMsg.style.display = "block";
 
-};
+    for (let i = 0; i < 15; i++) {
+      const heart = document.createElement("div");
+      heart.innerHTML = "❤️";
+      heart.style.position = "fixed";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.bottom = "0";
+      heart.style.fontSize = "22px";
+      heart.style.animation = "floatUp 4s linear";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }
+  });
 
-// 💍 Engagement Date (LOCAL TIME)
-const engagementDate = new Date(2025, 6, 22, 0, 0, 0); // 22 July 2025
+  /* ⏳ COUNTDOWN (MOBILE SAFE) */
+  const engagementDate = new Date(2025, 6, 22, 0, 0, 0);
+  const countdownEl = document.getElementById("countdown");
 
-function updateCounter() {
-const el = document.getElementById("countdown");
-if (!el) return;
+  function updateCounter() {
+    const now = new Date();
 
-const now = new Date();  
+    let months =
+      (now.getFullYear() - engagementDate.getFullYear()) * 12 +
+      (now.getMonth() - engagementDate.getMonth());
 
-let years = now.getFullYear() - engagementDate.getFullYear();  
-let months = now.getMonth() - engagementDate.getMonth();  
-let days = now.getDate() - engagementDate.getDate();  
+    let tempDate = new Date(
+      engagementDate.getFullYear(),
+      engagementDate.getMonth() + months,
+      engagementDate.getDate()
+    );
 
-if (days < 0) {  
-  months--;  
-  const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);  
-  days += prevMonth.getDate();  
-}  
+    if (now < tempDate) {
+      months--;
+      tempDate = new Date(
+        engagementDate.getFullYear(),
+        engagementDate.getMonth() + months,
+        engagementDate.getDate()
+      );
+    }
 
-if (months < 0) {  
-  years--;  
-  months += 12;  
-}  
+    let diff = now - tempDate;
 
-const totalMonths = years * 12 + months;  
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    diff %= (1000 * 60 * 60 * 24);
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    diff %= (1000 * 60 * 60);
+    const minutes = Math.floor(diff / (1000 * 60));
+    diff %= (1000 * 60);
+    const seconds = Math.floor(diff / 1000);
 
-const lastAnniv = new Date(  
-  engagementDate.getFullYear(),  
-  engagementDate.getMonth() + totalMonths,  
-  engagementDate.getDate()  
-);  
+    countdownEl.innerHTML =
+      `💖 Engagement से<br>
+       ${months} महीने ${days} दिन<br>
+       ${hours} घंटे ${minutes} मिनट ${seconds} सेकंड`;
+  }
 
-let diffMs = now - lastAnniv;  
+  updateCounter();
+  setInterval(updateCounter, 1000);
 
-const hours = Math.floor(diffMs / (1000 * 60 * 60));  
-diffMs %= (1000 * 60 * 60);  
+  /* 📸 PHOTO POPUP (TOUCH SAFE) */
+  const popup = document.getElementById("photoPopup");
+  const popupImg = document.getElementById("popupImg");
+  const popupText = document.getElementById("popupText");
+  const closeBtn = document.querySelector(".close");
 
-const minutes = Math.floor(diffMs / (1000 * 60));  
-diffMs %= (1000 * 60);  
+  document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("click", function () {
+      popupImg.src = card.dataset.img;
+      popupText.innerText = card.dataset.text;
+      popup.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    });
+  });
 
-const seconds = Math.floor(diffMs / 1000);  
-
-el.innerHTML = `  
-  💖 Engagement से <br>  
-  <b>${totalMonths}</b> महीने   
-  <b>${days}</b> दिन <br>  
-  <b>${hours}</b> घंटे   
-  <b>${minutes}</b> मिनट   
-  <b>${seconds}</b> सेकंड हो चुके हैं 💍✨  
-`;
-
-}
-
-updateCounter();
-setInterval(updateCounter, 1000);
+  closeBtn.addEventListener("click", function () {
+    popup.style.display = "none";
+    document.body.style.overflow = "auto";
+  });
 
 });
-// 💖 PHOTO POPUP FUNCTIONS
-function openPopup(imgSrc, text) {for (let i = 0; i < 12; i++) {
-const h = document.createElement("div");
-h.innerHTML = "❤️";
-h.style.position = "fixed";
-h.style.left = Math.random() * 100 + "vw";
-h.style.top = Math.random() * 100 + "vh";
-h.style.fontSize = "18px";
-h.style.opacity = "0.8";
-h.style.zIndex = "10000";
-h.style.animation = "floatUp 3s linear";
-document.body.appendChild(h);
-setTimeout(() => h.remove(), 3000);
-}
-document.getElementById("popupImg").src = imgSrc;
-document.getElementById("popupText").innerText = text;
-document.getElementById("photoPopup").style.display = "flex";
-document.body.style.overflow = "hidden";
-}
-
-function closePopup() {
-document.getElementById("photoPopup").style.display = "none";
-document.body.style.overflow = "auto";
-}
